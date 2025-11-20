@@ -47,7 +47,7 @@ fun FormSiswa(
     var txtGender by remember { mutableStateOf("") }
     val listData : MutableList<String> = mutableListOf(txtNama, txtGender, txtAlamat)
 
-    Scaffold (modifier = androidx.compose.ui.Modifier,
+    Scaffold (modifier = Modifier,
         {
             TopAppBar(
                 title = {Text(stringResource(id= R.string.app_name),
@@ -57,7 +57,7 @@ fun FormSiswa(
             )
         }
     ){ isiRuang ->
-        Column(modifier = androidx.compose.ui.Modifier.padding( isiRuang),
+        Column(modifier = Modifier.padding( isiRuang),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -65,7 +65,7 @@ fun FormSiswa(
                 value = txtNama,
                 singleLine = true,
                 shape = MaterialTheme.shapes.medium,
-                modifier = androidx.compose.ui.Modifier
+                modifier = Modifier
                     .padding(top = 20.dp)
                     .width(350.dp),
                 label = {Text(text = "Nama Lengkap")},
@@ -73,7 +73,7 @@ fun FormSiswa(
                     txtNama = it
                 }
             )
-            HorizontalDivider(modifier = androidx.compose.ui.Modifier
+            HorizontalDivider(modifier = Modifier
                 .padding(20.dp)
                 .width(250.dp), thickness = Thickness,color =
                 Color.Red)
@@ -97,7 +97,7 @@ fun FormSiswa(
                     }
                 }
             }
-            HorizontalDivider(modifier = androidx.compose.ui.Modifier
+            HorizontalDivider(modifier = Modifier
                 .padding(20.dp)
                 .width(250.dp),
                 thickness = 1.dp,
@@ -106,16 +106,16 @@ fun FormSiswa(
             OutlinedTextField(
                 value = txtAlamat,
                 singleLine = true,
-                modifier = androidx.compose.ui.Modifier
+                modifier = Modifier
                     .width(250.dp),
                 label = {Text(text = "Alamat")},
                 onValueChange = {
                     txtAlamat = it
                 },
             )
-            Spacer(modifier = androidx.compose.ui.Modifier.height(30.dp))
+            Spacer(modifier = Modifier.height(30.dp))
             Button(
-                modifier = androidx.compose.ui.Modifier.fillMaxWidth(1f),
+                modifier = Modifier.fillMaxWidth(1f),
                 onClick = {
                     onSubmitButtonClicked(listData)
                 }
