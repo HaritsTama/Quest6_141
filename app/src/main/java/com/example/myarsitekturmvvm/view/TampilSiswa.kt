@@ -49,6 +49,7 @@ fun TampilSiswa(
                     )
             )
         }){ isiRuang->
+        items.forEach { items -> }
         Column(
             modifier = Modifier.padding(isiRuang),
             verticalArrangement = Arrangement.SpaceBetween
